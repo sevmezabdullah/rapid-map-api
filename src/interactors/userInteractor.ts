@@ -1,6 +1,8 @@
+import { injectable } from "inversify";
 import { User } from "../entities/User";
 import { IUserInteractor } from "../interfaces/IUserInteractor";
 
+@injectable()
 export class UserInteractor implements IUserInteractor {
 
     login(email: string, password: string): Promise<string> {
