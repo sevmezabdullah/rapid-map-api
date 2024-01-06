@@ -1,8 +1,10 @@
-import { User } from "../entities/User"
+import { User } from "../../entities/User"
+
 
 export interface IUserInteractor {
-    login(email: string, password: string): Promise<string>
-    register(name: string, email: string, password: string, role: string): Promise<string>
+
+    login(email: string, password: string): Promise<User>
+    register(name: string, email: string, password: string, role: string, phone: string): Promise<string>
     getAll(): Promise<User[]>
     getById(id: string): Promise<User>
     getByEmail(email: string): Promise<User>

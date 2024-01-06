@@ -1,14 +1,17 @@
-import express from 'express';
-
+import express, { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import "reflect-metadata";
 import userRouter from './src/routes/userRouter';
-import 'reflect-metadata'
+import { connect } from './dbConnection';
+
 const app = express()
 app.use(express.json())
 
 
 
-app.use('/api', userRouter)
+app.use('/api/user', userRouter)
 
-app.listen(3000, () => {
+
+app.listen(3000, async () => {
+    await connect()
     console.log("server started")
 })
