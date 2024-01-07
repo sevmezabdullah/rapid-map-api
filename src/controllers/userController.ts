@@ -12,7 +12,9 @@ export class UserController {
 
 
 
-    constructor(@inject(INTERFACE_TYPE.UserInteractor) interactor: IUserInteractor, @inject(INTERFACE_TYPE.Token) token: Token) {
+    constructor(
+        @inject(INTERFACE_TYPE.UserInteractor) interactor: IUserInteractor,
+        @inject(INTERFACE_TYPE.Token) token: Token) {
         this.interactor = interactor;
         this.token = token;
 
