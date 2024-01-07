@@ -48,8 +48,11 @@ export class UserRepository implements IUserRepository {
         else return [];
 
     }
-    getById(id: string): Promise<User> {
-        throw new Error("Method not implemented.");
+    async getById(id: string): Promise<User> {
+        const user = await UserModel.findById(id);
+        if (user) return user;
+        else return new UserModel();
+
     }
     getByEmail(email: string): Promise<User> {
         throw new Error("Method not implemented.");
