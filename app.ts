@@ -1,4 +1,4 @@
-import express, { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import "reflect-metadata";
 import userRouter from './src/routes/userRouter';
 import { connect } from './dbConnection';

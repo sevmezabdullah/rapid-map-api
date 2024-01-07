@@ -26,5 +26,6 @@ const userRouter = express.Router();
 
 userRouter.post('/login', controller.onLogin.bind(controller));
 userRouter.post('/create', controller.onRegister.bind(controller));
+userRouter.get('/getAll', controller.onGetAll.bind(controller));
 
 export default userRouter;

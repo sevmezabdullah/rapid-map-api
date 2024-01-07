@@ -37,8 +37,9 @@ export class UserInteractor implements IUserInteractor {
         const result = await this.repository.register(name, email, hashedPassword, role, phoneNumber);
         return result;
     }
-    getAll(): Promise<User[]> {
-        throw new Error("Method not implemented.");
+    async getAll(): Promise<User[]> {
+        const users = await this.repository.getAll();
+        return users;
     }
     getById(id: string): Promise<User> {
         throw new Error("Method not implemented.");

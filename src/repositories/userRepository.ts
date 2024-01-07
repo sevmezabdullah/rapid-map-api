@@ -38,12 +38,15 @@ export class UserRepository implements IUserRepository {
         if (result) {
             return "Kayıt başarılı";
         } else {
-            return Promise.reject("Kayıt başarısız");
+            return "Kullanıcı kaydı tamamlanamadı"
         }
 
     }
-    getAll(): Promise<User[]> {
-        throw new Error("Method not implemented.");
+    async getAll(): Promise<User[]> {
+        const users = await UserModel.find();
+        if (users) return users;
+        else return [];
+
     }
     getById(id: string): Promise<User> {
         throw new Error("Method not implemented.");

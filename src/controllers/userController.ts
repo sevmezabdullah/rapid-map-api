@@ -39,11 +39,18 @@ export class UserController {
             const result = await this.interactor.register(body.name, body.email, body.password, body.role, body.phone);
             res.status(200).json({ message: result });
         } catch (error: any) {
-
             res.status(500).json({ message: error });
         }
     }
-    async onGetAll(req: Request, res: Response, next: NextFunction) { }
+    async onGetAll(req: Request, res: Response, next: NextFunction) {
+        try {
+            const users = await this.interactor.getAll();
+
+            res.status(200).json({ users });
+        } catch (error: any) {
+            res.status(500).json({ message: error });
+        }
+    }
     async onGetById(req: Request, res: Response, next: NextFunction) { }
     async onGetByEmail(req: Request, res: Response, next: NextFunction) { }
     async onGetByRole(req: Request, res: Response, next: NextFunction) { }
