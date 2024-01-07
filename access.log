@@ -14,3 +14,10 @@
 {"level":"info","message":"GET /api/user/getAll ::1 {} PostmanRuntime/7.36.0","timestamp":"2024-01-07T09:16:47.412Z"}
 {"level":"info","message":"GET /api/user/getAll ::1 {} PostmanRuntime/7.36.0","timestamp":"2024-01-07T09:17:16.247Z"}
 {"level":"info","message":"GET /api/user/getAll ::1 {} PostmanRuntime/7.36.0","timestamp":"2024-01-07T09:18:06.885Z"}
+{"level":"info","message":"POST /api/user/login ::1 {\"email\":\"abdullahsevmez@gmail.com\",\"password\":\"123456\"} PostmanRuntime/7.36.0","timestamp":"2024-01-07T11:34:16.363Z"}
+{"level":"info","message":"POST /api/user/login ::1 {\"email\":\"abdullahsevmez@gmail.com\",\"password\":\"123456\"} PostmanRuntime/7.36.0","timestamp":"2024-01-07T11:34:45.084Z"}
+{"level":"info","message":"POST /api/user/login ::1 {\"email\":\"abdullahsevmez@gmail.com\",\"password\":\"12345\"} PostmanRuntime/7.36.0","timestamp":"2024-01-07T11:35:13.056Z"}
+{"level":"info","message":"POST /api/user/login ::1 {\"email\":\"abdullahsevmez@gmail.com\",\"password\":\"123456\"} PostmanRuntime/7.36.0","timestamp":"2024-01-07T11:35:37.390Z"}
+{"level":"info","message":"POST /api/user/login ::1 {\"email\":\"abdullahsevez@gmail.com\",\"password\":\"123456\"} PostmanRuntime/7.36.0","timestamp":"2024-01-07T11:35:41.330Z"}
+{"level":"info","message":"POST /api/user/login ::1 {\"email\":\"abdullahsevmez@gmail.com\",\"password\":\"12356\"} PostmanRuntime/7.36.0","timestamp":"2024-01-07T11:35:47.866Z"}
+{"level":"info","message":"POST /api/user/login ::1 {\"email\":\"abdullahsevmez@gmail.com\",\"password\":\"123456\"} PostmanRuntime/7.36.0","timestamp":"2024-01-07T11:35:50.788Z"}

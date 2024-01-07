@@ -28,8 +28,11 @@ export class UserInteractor implements IUserInteractor {
 
     async login(email: string, password: string): Promise<User> {
         const user = await this.repository.login(email, password);
-
-        if (!user) throw ("User not found");
+        const verfiyPassword = await this.password.comparePassword(password, user.password);
+        if (verfiyPassword)
+            return user;
+        if (!user) throw ("Kullanıcı bulunamadı");
+        if (!verfiyPassword) throw ("Email yada şifre hatalı");
         return user;
     }
     async register(name: string, email: string, password: string, role: string, phoneNumber: string): Promise<string> {
