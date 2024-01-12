@@ -29,7 +29,7 @@ const truckSchema = new Schema<Truck>({
         required: false
     },
     currentPosition: {
-        type: { langitute: Number, latitude: Number, dateTime: Date },
+        type: mongoose.Schema.Types.Mixed,
         required: false
     },
 

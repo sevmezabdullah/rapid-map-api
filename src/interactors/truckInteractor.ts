@@ -11,6 +11,14 @@ export class TruckInteractor implements ITruckInteractor {
     constructor(@inject(INTERFACE_TYPE.TruckRepository) repository: ITruckInteractor) {
         this.repository = repository;
     }
+    async getTrucksCount(): Promise<number> {
+        const result = await this.repository.getTrucksCount();
+        return result;
+    }
+    async getTrucksPaged(page: number, pageSize: number): Promise<Truck[]> {
+        const result = await this.repository.getTrucksPaged(page, pageSize);
+        return result;
+    }
     async updateTruckLocationByDriverId(driverId: string, langitude: number, longitude: number): Promise<string> {
         const result = await this.repository.updateTruckLocationByDriverId(driverId, langitude, longitude);
         if (result) return "Truck location updated";
@@ -55,8 +63,8 @@ export class TruckInteractor implements ITruckInteractor {
         else throw new Error("Truck not found");
 
     }
-    async getTruckByPlate(): Promise<Truck> {
-        const result = await this.repository.getTruckByPlate();
+    async getTruckByPlate(plate: string): Promise<Truck> {
+        const result = await this.repository.getTruckByPlate(plate);
         if (result) return result;
         else throw new Error("Truck not found");
     }
