@@ -51,10 +51,52 @@ export class UserController {
             res.status(500).json({ message: error });
         }
     }
-    async onGetById(req: Request, res: Response, next: NextFunction) { }
-    async onGetByEmail(req: Request, res: Response, next: NextFunction) { }
-    async onGetByRole(req: Request, res: Response, next: NextFunction) { }
-    async onUpdate(req: Request, res: Response, next: NextFunction) { }
+    async onGetById(req: Request, res: Response, next: NextFunction) {
+        try {
+            const id = req.params.id;
+            const user = await this.interactor.getById(id);
+            res.status(200).json({ user });
+        } catch (error: any) {
+            res.status(500).json({ message: error });
+        }
+    }
+    async onGetByEmail(req: Request, res: Response, next: NextFunction) {
+        try {
+            const email = req.params.email;
+            const user = await this.interactor.getByEmail(email);
+            res.status(200).json({ user });
+        } catch (error: any) {
+            res.status(500).json({ message: error });
+        }
+    }
+    async onGetByRole(req: Request, res: Response, next: NextFunction) {
+        try {
+            const role = req.params.role;
+            const users = await this.interactor.getByRole(role);
+            res.status(200).json({ users });
+        } catch (error: any) {
+            res.status(500).json({ message: error });
+        }
+    }
+    async onUpdate(req: Request, res: Response, next: NextFunction) {
+        try {
+            const id = req.params.id;
+            const body = req.body;
+            const result = await this.interactor.update(id, body.name, body.email, body.password, body.role);
+            res.status(200).json({ message: result });
+        } catch (error: any) {
+            res.status(500).json({ message: error });
+        }
+    }
     async onDelete(req: Request, res: Response, next: NextFunction) { }
-    async onChangePassword(req: Request, res: Response, next: NextFunction) { }
+    async onChangePassword(req: Request, res: Response, next: NextFunction) {
+        try {
+            const id = req.params.id;
+            const body = req.body;
+            const result = await this.interactor.changePassword(id, body.password);
+            res.status(200).json({ message: result });
+        } catch (error: any) {
+            res.status(500).json({ message: error });
+        }
+    }
 }

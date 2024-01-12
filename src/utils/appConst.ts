@@ -6,4 +6,7 @@ export const INTERFACE_TYPE = {
     UserController: Symbol.for("UserController"),
     Token: Symbol.for("Token"),
     Password: Symbol.for("Password"),
+    TruckRepository: Symbol.for("ITruckRepository"),
+    TruckInteractor: Symbol.for("ITruckInteractor"),
+    TruckController: Symbol.for("TruckController"),
 }

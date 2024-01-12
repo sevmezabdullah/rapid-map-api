@@ -18,8 +18,6 @@ export class UserInteractor implements IUserInteractor {
     constructor(
         @inject(INTERFACE_TYPE.UserRepository) repository: IUserRepository,
         @inject(INTERFACE_TYPE.Password) password: Password,
-
-
     ) {
         this.repository = repository;
         this.password = password;
@@ -27,7 +25,7 @@ export class UserInteractor implements IUserInteractor {
     }
 
     async login(email: string, password: string): Promise<User> {
-        const user = await this.repository.login(email, password);
+        const user = await this.repository.login(email);
         const verfiyPassword = await this.password.comparePassword(password, user.password);
         if (verfiyPassword)
             return user;
@@ -44,22 +42,28 @@ export class UserInteractor implements IUserInteractor {
         const users = await this.repository.getAll();
         return users;
     }
-    getById(id: string): Promise<User> {
-        throw new Error("Method not implemented.");
+    async getById(id: string): Promise<User | null> {
+        const user = await this.repository.getById(id);
+        return user;
     }
-    getByEmail(email: string): Promise<User> {
-        throw new Error("Method not implemented.");
+    async getByEmail(email: string): Promise<User | null> {
+        const user = await this.repository.getByEmail(email);
+        return user;
     }
-    getByRole(role: string): Promise<User[]> {
-        throw new Error("Method not implemented.");
+    async getByRole(role: string): Promise<User[]> {
+        const users = await this.repository.getByRole(role);
+        return users;
     }
-    update(id: string, name: string, email: string, password: string, role: string): Promise<string> {
-        throw new Error("Method not implemented.");
+    async update(id: string, name: string, email: string, password: string, role: string): Promise<string> {
+        const result = await this.repository.update(id, name, email, password, role);
+        return result;
     }
     delete(id: string): Promise<string> {
         throw new Error("Method not implemented.");
     }
-    changePassword(id: string, password: string): Promise<string> {
-        throw new Error("Method not implemented.");
+    async changePassword(id: string, password: string): Promise<string> {
+        const newPassword = await this.password.hashPassword(password);
+        const result = this.repository.changePassword(id, newPassword);
+        return result;
     }
 }

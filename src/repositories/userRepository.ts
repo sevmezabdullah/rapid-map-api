@@ -1,4 +1,4 @@
-import { inject, injectable } from "inversify";
+import { injectable } from "inversify";
 import { User } from "../entities/User";
 import { IUserRepository } from "../interfaces/user/IUserRepository";
 import UserModel from "../models/User";
@@ -7,7 +7,7 @@ import UserModel from "../models/User";
 @injectable()
 export class UserRepository implements IUserRepository {
 
-    async login(email: string, password: string): Promise<User> {
+    async login(email: string): Promise<User> {
         const user = await UserModel.findOne({ email: email });
         if (user) {
             return user;
@@ -33,26 +33,38 @@ export class UserRepository implements IUserRepository {
         else return [];
 
     }
-    async getById(id: string): Promise<User> {
+    async getById(id: string): Promise<User | null> {
         const user = await UserModel.findById(id);
         if (user) return user;
-        else return new UserModel();
+        else return null;
 
     }
-    getByEmail(email: string): Promise<User> {
-        throw new Error("Method not implemented.");
+    async getByEmail(email: string): Promise<User | null> {
+        const user = await UserModel.findOne({ email: email });
+        if (user) return user;
+        else return null;
+
     }
-    getByRole(role: string): Promise<User[]> {
-        throw new Error("Method not implemented.");
+    async getByRole(role: string): Promise<User[]> {
+        const users = await UserModel.find({ role: role });
+        if (users) return users;
+        else return [];
+
     }
-    update(id: string, name: string, email: string, password: string, role: string): Promise<string> {
-        throw new Error("Method not implemented.");
+    async update(id: string, name: string, email: string, password: string, role: string): Promise<string> {
+        const user = await UserModel.findByIdAndUpdate(id, { name: name, email: email, password: password, role: role });
+        if (user) return "Kullanıcı güncellendi";
+        else return "Kullanıcı güncellenemedi";
     }
-    delete(id: string): Promise<string> {
-        throw new Error("Method not implemented.");
+    async delete(id: string): Promise<string> {
+        const user = await UserModel.findByIdAndDelete(id);
+        return "Kullanıcı silindi";
     }
-    changePassword(id: string, password: string): Promise<string> {
-        throw new Error("Method not implemented.");
+    async changePassword(id: string, password: string): Promise<string> {
+        const user = await UserModel.findByIdAndUpdate(id, { password: password });
+        if (user) return "Şifre değiştirildi";
+        else
+            return "Şifre değiştirilemedi";
     }
 
 }

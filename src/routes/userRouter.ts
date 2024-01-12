@@ -27,5 +27,8 @@ const userRouter = express.Router();
 userRouter.post('/login', controller.onLogin.bind(controller));
 userRouter.post('/create', controller.onRegister.bind(controller));
 userRouter.get('/getAll', controller.onGetAll.bind(controller));
+userRouter.get('/getById/:id', controller.onGetById.bind(controller));
+userRouter.get('/getByEmail/:email', controller.onGetByEmail.bind(controller));
+userRouter.get('/getByRole/:role', controller.onGetByRole.bind(controller));
 
 export default userRouter;
