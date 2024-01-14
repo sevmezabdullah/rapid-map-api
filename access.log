@@ -1402,3 +1402,5 @@
 {"level":"info","message":"GET /api/truck/getTrucksPaged/0/10 ::1 {} Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36","timestamp":"2024-01-14T14:06:30.519Z"}
 {"level":"info","message":"GET /api/truck/getTrucksPaged/0/10 ::1 {} Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36","timestamp":"2024-01-14T14:06:46.527Z"}
 {"level":"info","message":"GET /api/truck/getTrucksPaged/0/10 ::1 {} Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36","timestamp":"2024-01-14T14:07:02.519Z"}
+{"level":"info","message":"POST /api/user/create ::1 {\"email\":\"ersansen@gmail.com\",\"name\":\"Ersan\",\"password\":\"123456\",\"role\":\"transporter\",\"phone\":\"+905070979570\"} PostmanRuntime/7.36.1","timestamp":"2024-01-14T15:34:19.815Z"}
+{"level":"info","message":"POST /api/user/login ::1 {\"email\":\"ersansen@gmail.com\",\"password\":\"123456\"} PostmanRuntime/7.36.1","timestamp":"2024-01-14T15:34:29.075Z"}

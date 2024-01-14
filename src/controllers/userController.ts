@@ -36,9 +36,9 @@ export class UserController {
     async onRegister(req: Request, res: Response, next: NextFunction) {
         try {
 
-            const randomPassword = Math.random().toString(36).slice(-8);
+
             const body = req.body;
-            const result = await this.interactor.register(body.name, body.email, randomPassword, body.role, body.phone);
+            const result = await this.interactor.register(body.name, body.email, body.password, body.role, body.phone);
             res.status(200).json({ message: result });
         } catch (error: any) {
             res.status(500).json({ message: error });
