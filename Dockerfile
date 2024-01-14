@@ -1,5 +1,11 @@
 FROM node:16
 
+
+# Kullanıcı oluştur
+RUN useradd -ms /bin/bash ubuntu
+
+# Kullanıcıyı seç
+USER ubuntu
 # Create app directory
 WORKDIR /usr/src/app
 
