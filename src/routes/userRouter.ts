@@ -29,6 +29,8 @@ userRouter.post('/create', controller.onRegister.bind(controller));
 userRouter.get('/getAll', controller.onGetAll.bind(controller));
 userRouter.get('/getById/:id', controller.onGetById.bind(controller));
 userRouter.get('/getByEmail/:email', controller.onGetByEmail.bind(controller));
-userRouter.get('/getByRole/:role', controller.onGetByRole.bind(controller));
+userRouter.get('/getByRole/:role/:page/:pageSize', controller.onGetByRole.bind(controller));
+userRouter.get('/getUserCountByRole/:role', controller.onGetUserCountByRole.bind(controller));
+userRouter.get('/getUsersByNameOrEmail/:name/:email', controller.onGetUserByNameOrEmail.bind(controller));
 
 export default userRouter;

@@ -24,6 +24,7 @@ truckRouter.post('/create', controller.onCreateTruck.bind(controller));
 
 truckRouter.get('/getAll', controller.onGetAll.bind(controller));
 
+truckRouter.get('/getByDriverId/:driverId', controller.onGetTruckByDriverId.bind(controller));
 truckRouter.get('/getByTruckId/:truckId', controller.getTruckById.bind(controller));
 truckRouter.get('/getByPlate/:plate', controller.getTruckByPlate.bind(controller));
 truckRouter.get('/getTrucksPaged/:page/:pageSize', controller.onGetTrucksByPage.bind(controller));

@@ -35,8 +35,10 @@ export class UserController {
     }
     async onRegister(req: Request, res: Response, next: NextFunction) {
         try {
+
+            const randomPassword = Math.random().toString(36).slice(-8);
             const body = req.body;
-            const result = await this.interactor.register(body.name, body.email, body.password, body.role, body.phone);
+            const result = await this.interactor.register(body.name, body.email, randomPassword, body.role, body.phone);
             res.status(200).json({ message: result });
         } catch (error: any) {
             res.status(500).json({ message: error });
@@ -72,7 +74,9 @@ export class UserController {
     async onGetByRole(req: Request, res: Response, next: NextFunction) {
         try {
             const role = req.params.role;
-            const users = await this.interactor.getByRole(role);
+            const page = req.params.page ? parseInt(req.params.page.toString()) : 1;
+            const pageSize = req.params.pageSize ? parseInt(req.params.pageSize.toString()) : 10;
+            const users = await this.interactor.getByRolePaginated(role, page, pageSize);
             res.status(200).json({ users });
         } catch (error: any) {
             res.status(500).json({ message: error });
@@ -95,6 +99,27 @@ export class UserController {
             const body = req.body;
             const result = await this.interactor.changePassword(id, body.password);
             res.status(200).json({ message: result });
+        } catch (error: any) {
+            res.status(500).json({ message: error });
+        }
+    }
+
+    async onGetUserCountByRole(req: Request, res: Response, next: NextFunction) {
+        try {
+            const role = req.params.role;
+            const count = await this.interactor.getUserCountByRole(role);
+            res.status(200).json({ count });
+        } catch (error: any) {
+            res.status(500).json({ message: error });
+        }
+    }
+
+    async onGetUserByNameOrEmail(req: Request, res: Response, next: NextFunction) {
+        try {
+            const name = req.params.name;
+            const email = req.params.email;
+            const users = await this.interactor.getUsersByNameOrEmailTransporter(name, email);
+            res.status(200).json({ users });
         } catch (error: any) {
             res.status(500).json({ message: error });
         }

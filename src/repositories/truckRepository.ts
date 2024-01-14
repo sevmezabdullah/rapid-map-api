@@ -48,7 +48,7 @@ export class TruckRepository implements ITruckRepository {
         else throw new Error("Truck not updated")
     }
     async updateTruckLoadNumber(truckId: string, newLoadNumber: string): Promise<string> {
-        const updateResult = await TruckModel.updateOne({ _id: truckId }, { loadNumber: newLoadNumber }, { new: true });
+        const updateResult = await TruckModel.updateOne({ _id: truckId }, { loadNumber: newLoadNumber, status: 'inTransit' }, { new: true });
         if (updateResult) return "Truck updated";
         else throw new Error("Truck not updated")
     }

@@ -6,6 +6,21 @@ import UserModel from "../models/User";
 
 @injectable()
 export class UserRepository implements IUserRepository {
+    async getUsersByNameOrEmailTransporter(name: string, email: string): Promise<User[]> {
+        const users = await UserModel.find({ $or: [{ name: name }, { email: email }] });
+        if (users) return users;
+        else return [];
+    }
+    async getUserCountByRole(role: string): Promise<number> {
+        const count = await UserModel.countDocuments({ role: role });
+        return count;
+    }
+
+    async getByRolePaginated(role: string, page: number, pageSize: number): Promise<User[]> {
+        const users = await UserModel.find({ role: role }).skip((page - 1) * pageSize).limit(pageSize).select("-password");
+        if (users) return users;
+        else return [];
+    }
 
     async login(email: string): Promise<User> {
         const user = await UserModel.findOne({ email: email });
@@ -45,12 +60,7 @@ export class UserRepository implements IUserRepository {
         else return null;
 
     }
-    async getByRole(role: string): Promise<User[]> {
-        const users = await UserModel.find({ role: role });
-        if (users) return users;
-        else return [];
 
-    }
     async update(id: string, name: string, email: string, password: string, role: string): Promise<string> {
         const user = await UserModel.findByIdAndUpdate(id, { name: name, email: email, password: password, role: role });
         if (user) return "Kullanıcı güncellendi";

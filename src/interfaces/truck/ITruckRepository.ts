@@ -2,7 +2,7 @@ import { Truck } from "../../entities/Truck";
 
 export interface ITruckRepository {
     createTruck(truck: Truck): Promise<string>;
-    updateTruck(truckId: string): Promise<string>;
+    updateTruck(truckId: string, truck: Truck): Promise<string>;
     updateTruckLocationByDriverId(driverId: string, langitude: number, longitude: number): Promise<string>;
     updateTruckStatus(truckId: string, newStatus: string): Promise<string>;
     updateTruckDriver(truckId: string, newDriverId: string): Promise<string>;

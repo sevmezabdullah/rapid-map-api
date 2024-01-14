@@ -32,6 +32,10 @@ const truckSchema = new Schema<Truck>({
         type: mongoose.Schema.Types.Mixed,
         required: false
     },
+    category: {
+        type: String,
+        required: false
+    }
 
 });
 

@@ -30,14 +30,16 @@ export class TruckInteractor implements ITruckInteractor {
         const result = await this.repository.createTruck(truck);
         return result;
     }
-    updateTruck(truckId: string): Promise<string> {
+    updateTruck(truckId: string, truck: Truck): Promise<string> {
         throw new Error("Method not implemented.");
     }
     updateTruckLocation(truckId: string, longitude: number, langitute: number): Promise<string> {
         throw new Error("Method not implemented.");
     }
-    updateTruckStatus(truckId: string, newStatus: string): Promise<string> {
-        throw new Error("Method not implemented.");
+    async updateTruckStatus(truckId: string, newStatus: string): Promise<string> {
+        const result = await this.repository.updateTruckStatus(truckId, newStatus);
+        if (result) return "Truck status updated";
+        else throw new Error("Truck status not updated");
     }
     async updateTruckDriver(truckId: string, newDriverId: string): Promise<string> {
         const result = await this.repository.updateTruckDriver(truckId, newDriverId);
@@ -84,8 +86,10 @@ export class TruckInteractor implements ITruckInteractor {
     getTrucksByLocation(): Promise<Truck> {
         throw new Error("Method not implemented.");
     }
-    getTrucksByDriverId(driverId: string): Promise<Truck> {
-        throw new Error("Method not implemented.");
+    async getTrucksByDriverId(driverId: string): Promise<Truck> {
+        const truck = await this.repository.getTrucksByDriverId(driverId);
+        if (truck) return truck;
+        else throw new Error("Truck not found");
     }
 
 }

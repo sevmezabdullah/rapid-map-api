@@ -23,6 +23,19 @@ export class UserInteractor implements IUserInteractor {
         this.password = password;
 
     }
+    async getUsersByNameOrEmailTransporter(name: string, email: string): Promise<User[]> {
+        const users = await this.repository.getUsersByNameOrEmailTransporter(name, email);
+        if (users) return users;
+        else return [];
+    }
+    getUserCountByRole(role: string): Promise<number> {
+        const count = this.repository.getUserCountByRole(role);
+        return count;
+    }
+    getByRolePaginated(role: string, page: number, pageSize: number): Promise<User[]> {
+        const users = this.repository.getByRolePaginated(role, page, pageSize);
+        return users;
+    }
 
     async login(email: string, password: string): Promise<User> {
         const user = await this.repository.login(email);
@@ -50,10 +63,7 @@ export class UserInteractor implements IUserInteractor {
         const user = await this.repository.getByEmail(email);
         return user;
     }
-    async getByRole(role: string): Promise<User[]> {
-        const users = await this.repository.getByRole(role);
-        return users;
-    }
+
     async update(id: string, name: string, email: string, password: string, role: string): Promise<string> {
         const result = await this.repository.update(id, name, email, password, role);
         return result;

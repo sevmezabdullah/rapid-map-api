@@ -9,5 +9,6 @@ export class Truck {
         public readonly loadNumber?: string,
         public readonly driverId?: string,
         public readonly currentPosition?: { langitute: number, latitude: number },
+        public readonly category?: string,
     ) { }
 }
