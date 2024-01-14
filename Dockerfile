@@ -16,4 +16,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
-CMD [ "nodemon", "app.ts" ]
+CMD [ "npm", "run","dev" ]
