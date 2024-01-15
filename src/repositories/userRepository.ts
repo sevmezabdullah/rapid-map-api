@@ -30,9 +30,9 @@ export class UserRepository implements IUserRepository {
             return Promise.reject("Kayıtlı kullanıcı bulunamadı.");
         }
     }
-    async register(name: string, email: string, password: string, role: string): Promise<string> {
+    async register(name: string, email: string, password: string, role: string, phone: string): Promise<string> {
 
-        const user = new UserModel({ name: name, email: email, password: password, role: role });
+        const user = new UserModel({ name: name, email: email, password: password, role: role, phone: phone });
         const result = await user.save();
 
         if (result) {
