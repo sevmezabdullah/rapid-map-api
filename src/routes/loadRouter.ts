@@ -17,4 +17,5 @@ container.bind(INTERFACE_TYPE.LoadRepository).to(LoadRepository);
 const controller = container.get<LoadController>(INTERFACE_TYPE.LoadController);
 
 loadRouter.post("/createLoad", controller.OnCreateLoad.bind(controller));
+loadRouter.get("/getAllLoads/:page/:pageSize", controller.OnGetAllLoads.bind(controller));
 export default loadRouter;

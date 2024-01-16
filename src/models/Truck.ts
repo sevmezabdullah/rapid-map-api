@@ -37,6 +37,8 @@ const truckSchema = new Schema<Truck>({
         required: false
     }
 
+}, {
+    timestamps: true
 });
 
 

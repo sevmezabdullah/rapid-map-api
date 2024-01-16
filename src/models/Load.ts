@@ -32,7 +32,7 @@ const loadSchema = new Schema<Load>({
         required: true
     },
 
-});
+}, { timestamps: true });
 
 
 export default model("Load", loadSchema);

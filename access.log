@@ -1408,3 +1408,16 @@
 {"level":"info","message":"POST /api/load/createLoad ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T10:44:05.328Z"}
 {"level":"info","message":"POST /api/load/createLoad ::1 {\"customerId\":\"123456\",\"loadNumber\":\"123456\",\"loadAddress\":\"Cihangir\",\"unloadAddress\":\"Beşiktaş\",\"loadType\":\"Tekstil\",\"weight\":120} PostmanRuntime/7.36.1","timestamp":"2024-01-16T10:45:16.502Z"}
 {"level":"info","message":"POST /api/load/createLoad ::1 {\"customerId\":\"65a51c2da2f3423c2b5689b6\",\"loadNumber\":\"123456\",\"loadAddress\":\"Cihangir\",\"unloadAddress\":\"Beşiktaş\",\"loadType\":\"Tekstil\",\"weight\":120} PostmanRuntime/7.36.1","timestamp":"2024-01-16T10:45:57.530Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/0/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T10:53:51.411Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T10:54:08.863Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/2/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T10:54:18.816Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T10:54:24.052Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T10:55:26.927Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T10:55:28.522Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T14:05:21.643Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T14:05:25.443Z"}
+{"level":"info","message":"POST /api/load/createLoad ::1 {\"customerId\":\"65a51c2da2f3423c2b5689b6\",\"loadNumber\":\"123456\",\"loadAddress\":\"Cihangir\",\"unloadAddress\":\"Beşiktaş\",\"loadType\":\"Tekstil\",\"weight\":120} PostmanRuntime/7.36.1","timestamp":"2024-01-16T14:05:35.317Z"}
+{"level":"info","message":"POST /api/load/createLoad ::1 {\"customerId\":\"65a51c2da2f3423c2b5689b6\",\"loadNumber\":\"1234567\",\"loadAddress\":\"Cihangir\",\"unloadAddress\":\"Beşiktaş\",\"loadType\":\"Tekstil\",\"weight\":120} PostmanRuntime/7.36.1","timestamp":"2024-01-16T14:05:48.634Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T14:05:55.646Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T15:23:09.692Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T16:47:30.383Z"}

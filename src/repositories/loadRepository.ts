@@ -5,6 +5,18 @@ import LoadModel from "../models/Load";
 
 @injectable()
 export class LoadRepository implements ILoadRepository {
+    async getLoadsCount(): Promise<number> {
+        const count = await LoadModel.countDocuments();
+        return count;
+    }
+    async getLoadsPaginated(page: number, pageSize: number): Promise<Load[]> {
+        const result = await LoadModel.find().skip((page - 1) * pageSize).limit(pageSize).sort({ createdAt: -1 });
+        if (result) {
+            return result;
+        } else {
+            return []
+        }
+    }
     async createLoad(load: Load): Promise<string> {
         const newLoad = new LoadModel(load);
         const result = await newLoad.save();
@@ -14,9 +26,7 @@ export class LoadRepository implements ILoadRepository {
             throw new Error("Yük oluşturulamadı");
         }
     }
-    getLoads(): Promise<Load[]> {
-        throw new Error("Method not implemented.");
-    }
+
     getLoadById(id: string): Promise<Load> {
         throw new Error("Method not implemented.");
     }

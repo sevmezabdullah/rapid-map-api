@@ -10,14 +10,24 @@ export class LoadInteractor implements ILoadInteractor {
     constructor(@inject(INTERFACE_TYPE.LoadRepository) repository: ILoadInteractor) {
         this.repository = repository;
     }
+    async getLoadsCount(): Promise<number> {
+        const count = await this.repository.getLoadsCount();
+        return count;
+    }
+    async getLoadsPaginated(page: number, pageSize: number): Promise<Load[]> {
+        const result = await this.repository.getLoadsPaginated(page, pageSize);
+        if (result) {
+            return result;
+        } else {
+            return []
+        }
+    }
     async createLoad(load: Load): Promise<string> {
         const result = await this.repository.createLoad(load);
         if (result) return "Yük oluşturuldu";
         else throw new Error("Yük oluşturulamadı");
     }
-    getLoads(): Promise<Load[]> {
-        throw new Error("Method not implemented.");
-    }
+
     getLoadById(id: string): Promise<Load> {
         throw new Error("Method not implemented.");
     }
