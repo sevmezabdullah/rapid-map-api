@@ -10,7 +10,7 @@ export class LoadRepository implements ILoadRepository {
         return count;
     }
     async getLoadsPaginated(page: number, pageSize: number): Promise<Load[]> {
-        const result = await LoadModel.find().skip((page - 1) * pageSize).limit(pageSize).sort({ createdAt: -1 });
+        const result = await LoadModel.find().skip((page - 1) * pageSize).limit(pageSize).sort({ createdAt: -1 }).populate('ownerId');
         if (result) {
             return result;
         } else {
