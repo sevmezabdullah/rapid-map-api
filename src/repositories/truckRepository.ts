@@ -18,7 +18,7 @@ export class TruckRepository implements ITruckRepository {
 
 
     async updateTruckLocationByDriverId(driverId: string, latitude: number, longitude: number): Promise<string> {
-        const updateResult = await TruckModel.updateOne({ driverId: driverId }, { currentPosition: { latitude: latitude, longitude: longitude, dateTime: Date.now() } }, { new: true });
+        const updateResult = await TruckModel.updateOne({ driverId: driverId }, { currentPosition: { latitude: latitude, longitude: longitude, dateTime: Date.now() } });
 
         if (updateResult) return "Truck location updated";
         else
