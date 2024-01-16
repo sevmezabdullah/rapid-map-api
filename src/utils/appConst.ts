@@ -9,4 +9,7 @@ export const INTERFACE_TYPE = {
     TruckRepository: Symbol.for("ITruckRepository"),
     TruckInteractor: Symbol.for("ITruckInteractor"),
     TruckController: Symbol.for("TruckController"),
+    LoadRepository: Symbol.for("ILoadRepository"),
+    LoadInteractor: Symbol.for("ILoadInteractor"),
+    LoadController: Symbol.for("LoadController"),
 }
