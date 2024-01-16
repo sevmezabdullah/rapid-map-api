@@ -38,22 +38,22 @@ export class TruckRepository implements ITruckRepository {
     }
 
     async updateTruckStatus(truckId: string, newStatus: string): Promise<string> {
-        const updateResult = await TruckModel.updateOne({ _id: truckId }, { status: newStatus }, { new: true });
+        const updateResult = await TruckModel.updateOne({ _id: truckId }, { status: newStatus });
         if (updateResult) return "Truck updated";
         else throw new Error("Truck not updated")
     }
     async updateTruckDriver(truckId: string, newDriverId: string): Promise<string> {
-        const updateResult = await TruckModel.updateOne({ _id: truckId }, { driverId: newDriverId }, { new: true });
+        const updateResult = await TruckModel.updateOne({ _id: truckId }, { driverId: newDriverId });
         if (updateResult) return "Truck updated";
         else throw new Error("Truck not updated")
     }
     async updateTruckLoadNumber(truckId: string, newLoadNumber: string): Promise<string> {
-        const updateResult = await TruckModel.updateOne({ _id: truckId }, { loadNumber: newLoadNumber, status: 'inTransit' }, { new: true });
+        const updateResult = await TruckModel.updateOne({ _id: truckId }, { loadNumber: newLoadNumber, status: 'inTransit' });
         if (updateResult) return "Truck updated";
         else throw new Error("Truck not updated")
     }
     async updateTruckType(truckId: string, newType: string): Promise<string> {
-        const updateResult = await TruckModel.updateOne({ _id: truckId }, { type: newType }, { new: true });
+        const updateResult = await TruckModel.updateOne({ _id: truckId }, { type: newType });
         if (updateResult) return "Truck updated";
         else throw new Error("Truck not updated")
     }
