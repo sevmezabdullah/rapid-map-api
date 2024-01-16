@@ -32,5 +32,6 @@ userRouter.get('/getByEmail/:email', controller.onGetByEmail.bind(controller));
 userRouter.get('/getByRole/:role/:page/:pageSize', controller.onGetByRole.bind(controller));
 userRouter.get('/getUserCountByRole/:role', controller.onGetUserCountByRole.bind(controller));
 userRouter.get('/getUsersByNameOrEmail/:name/:email', controller.onGetUserByNameOrEmail.bind(controller));
+userRouter.get('/getUserByRole/:role', controller.onGetUserByRole.bind(controller));
 
 export default userRouter;

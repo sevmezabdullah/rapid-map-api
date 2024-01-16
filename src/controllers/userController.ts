@@ -124,4 +124,13 @@ export class UserController {
             res.status(500).json({ message: error });
         }
     }
+    async onGetUserByRole(req: Request, res: Response, next: NextFunction) {
+        try {
+            const role = req.params.role;
+            const users = await this.interactor.getUserByRole(role);
+            res.status(200).json({ users });
+        } catch (error: any) {
+            res.status(500).json({ message: error });
+        }
+    }
 }

@@ -23,6 +23,11 @@ export class UserInteractor implements IUserInteractor {
         this.password = password;
 
     }
+    async getUserByRole(role: string): Promise<User[]> {
+        const users = await this.repository.getUserByRole(role);
+        if (users) return users;
+        else return [];
+    }
     async getUsersByNameOrEmailTransporter(name: string, email: string): Promise<User[]> {
         const users = await this.repository.getUsersByNameOrEmailTransporter(name, email);
         if (users) return users;

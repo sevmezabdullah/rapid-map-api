@@ -14,4 +14,5 @@ export interface IUserInteractor {
     changePassword(id: string, password: string): Promise<string>
     getUserCountByRole(role: string): Promise<number>
     getUsersByNameOrEmailTransporter(name: string, email: string): Promise<User[]>
+    getUserByRole(role: string): Promise<User[]>
 }

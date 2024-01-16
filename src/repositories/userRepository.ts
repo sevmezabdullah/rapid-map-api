@@ -6,6 +6,11 @@ import UserModel from "../models/User";
 
 @injectable()
 export class UserRepository implements IUserRepository {
+    async getUserByRole(role: string): Promise<User[]> {
+        const users = await UserModel.find({ role: role }).select("-password");
+        if (users) return users;
+        else return [];
+    }
     async getUsersByNameOrEmailTransporter(name: string, email: string): Promise<User[]> {
         const users = await UserModel.find({ $or: [{ name: name }, { email: email }] });
         if (users) return users;
