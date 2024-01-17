@@ -38,7 +38,7 @@ export class LoadRepository implements ILoadRepository {
         throw new Error("Method not implemented.");
     }
     async getLoadByLoadNumber(loadNumber: string): Promise<Load[]> {
-        const result = await LoadModel.find({ loadNumber: loadNumber });
+        const result = await LoadModel.find({ loadNumber: loadNumber }).populate('customerId').sort({ createdAt: -1 });
         if (result) {
             return result;
         } else {
