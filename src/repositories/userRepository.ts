@@ -25,7 +25,7 @@ export class UserRepository implements IUserRepository {
 
 
         let conditions: any = {}
-        const queryParameters: any = { name, email, phone, role };
+        const queryParameters: any = { name: { $regex: name, $options: 'i' }, email: { $regex: email, $options: 'i' }, phone: { $regex: phone, $options: 'i' }, role };
         for (const key in queryParameters) {
             if (queryParameters[key]) {
                 conditions[key] = queryParameters[key];
