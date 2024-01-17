@@ -28,7 +28,7 @@ const loadSchema = new Schema<Load>({
         required: true
     },
     weight: {
-        type: Number,
+        type: String,
         required: true
     },
 

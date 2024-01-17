@@ -10,17 +10,19 @@ export class LoadRepository implements ILoadRepository {
         return count;
     }
     // Get all loads paginated
-    async getLoadsPaginated(page: number, pageSize: number, loadNumber: string, loadType: string, weight: number, loadAddress: string, unloadAddress: string): Promise<Load[]> {
+    async getLoadsPaginated(page: number, pageSize: number, loadNumber: string, loadType: string, weight: string, loadAddress: string, unloadAddress: string): Promise<Load[]> {
 
         let conditions: any = {};
         const queryParameters: any = {
+            weight: { $regex: weight },
             loadAddress:
                 { $regex: loadAddress, $options: 'i' },
             loadNumber: { $regex: loadNumber, $options: 'i' },
             loadType: { $regex: loadType, $options: 'i' },
             unloadAddress: { $regex: unloadAddress, $options: 'i' },
-            weight
+
         };
+        console.log(queryParameters)
         for (const key in queryParameters) {
             if (queryParameters[key]) {
                 conditions[key] = queryParameters[key];

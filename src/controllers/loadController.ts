@@ -31,7 +31,7 @@ export class LoadController {
             const pageSize = parseInt(req.params.pageSize as string);
             const loadNumber = req.query.loadNumber as string;
             const loadType = req.query.loadType as string;
-            const weight = parseInt(req.query.weight as string);
+            const weight = req.query.weight as string;
             const loadAddress = req.query.loadAddress as string;
             const unloadAddress = req.query.unloadAddress as string;
 
