@@ -41,4 +41,13 @@ export class LoadController {
             return res.status(400).json({ message: error });
         }
     }
+    async OnGetLoadByLoadNumber(req: Request, res: Response) {
+        try {
+            const loadNumber = req.params.loadNumber as string;
+            const result = await this.interactor.getLoadByLoadNumber(loadNumber);
+            return res.status(200).json({ message: result });
+        } catch (error) {
+            return res.status(400).json({ message: error });
+        }
+    }
 }

@@ -37,8 +37,13 @@ export class LoadRepository implements ILoadRepository {
     getLoadByCustomerId(id: string): Promise<Load[]> {
         throw new Error("Method not implemented.");
     }
-    getLoadByLoadNumber(loadNumber: string): Promise<any> {
-        throw new Error("Method not implemented.");
+    async getLoadByLoadNumber(loadNumber: string): Promise<Load[]> {
+        const result = await LoadModel.find({ loadNumber: loadNumber });
+        if (result) {
+            return result;
+        } else {
+            return []
+        }
     }
     getLoadByLoadType(loadType: string): Promise<any> {
         throw new Error("Method not implemented.");

@@ -1430,3 +1430,5 @@
 {"level":"info","message":"GET /api/user/getUserByRole/customer ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T20:12:23.394Z"}
 {"level":"info","message":"GET /api/user/getUserByRole/customer ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T20:21:26.952Z"}
 {"level":"info","message":"GET /api/user/getUserByRole/customer ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-16T20:21:29.254Z"}
+{"level":"info","message":"GET /api/load/getLoadByLoadNumber/123 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T08:21:06.063Z"}
+{"level":"info","message":"GET /api/load/getLoadByLoadNumber/65415 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T08:21:15.809Z"}

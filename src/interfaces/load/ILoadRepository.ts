@@ -8,7 +8,7 @@ export interface ILoadRepository {
     getLoadById(id: string): Promise<Load>;
     deleteLoad(id: string): Promise<string>;
     getLoadByCustomerId(id: string): Promise<Load[]>;
-    getLoadByLoadNumber(loadNumber: string): Promise<any>;
+    getLoadByLoadNumber(loadNumber: string): Promise<Load[]>;
     getLoadByLoadType(loadType: string): Promise<any>;
     getLoadByWeight(weight: number): Promise<any>;
     getLoadByLoadAddress(loadAddress: string): Promise<any>;
