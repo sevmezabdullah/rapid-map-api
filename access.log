@@ -1,1 +1,15 @@
 {"level":"info","message":"GET /api/load/getAllLoads/1/10?loadNumber=&weight=&loadAddress=&unloadAddress=&loadType= ::1 {} Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36","timestamp":"2024-01-17T15:46:04.772Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:01:19.323Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:01:56.446Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:02:15.142Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:02:17.849Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:02:40.669Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:03:05.240Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:03:14.997Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:03:37.568Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20?email=&name=&phone= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:04:00.533Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20?email=an&name=&phone= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:04:11.384Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20?email=anas&name=&phone= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:04:17.435Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20?email=&name=&phone= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:05:10.595Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20?email=&name=anas&phone= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:05:16.849Z"}
+{"level":"info","message":"GET /api/user/getByRole/customer/1/20?email=&name=&phone= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T16:05:25.775Z"}
