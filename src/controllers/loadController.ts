@@ -26,7 +26,14 @@ export class LoadController {
         try {
             const page = parseInt(req.params.page as string);
             const pageSize = parseInt(req.params.pageSize as string);
-            const result = await this.interactor.getLoadsPaginated(page, pageSize);
+            const loadNumber = req.query.loadNumber as string;
+            const loadType = req.query.loadType as string;
+            const weight = parseInt(req.query.weight as string);
+            const loadAddress = req.query.loadAddress as string;
+
+            const unloadAddress = req.query.unloadAddress as string;
+
+            const result = await this.interactor.getLoadsPaginated(page, pageSize, loadNumber, loadType, weight, loadAddress, unloadAddress);
             return res.status(200).json({ message: result });
         } catch (error) {
             return res.status(400).json({ message: error });

@@ -3,7 +3,7 @@ import { Load } from "../../entities/Load";
 export interface ILoadRepository {
 
     createLoad(load: Load): Promise<string>;
-    getLoadsPaginated(page: number, pageSize: number): Promise<Load[]>;
+    getLoadsPaginated(page: number, pageSize: number, loadNumber: string, loadType: string, weight: number, loadAddress: string, unloadAddress: string): Promise<Load[]>;
     getLoadsCount(): Promise<number>;
     getLoadById(id: string): Promise<Load>;
     deleteLoad(id: string): Promise<string>;
