@@ -13,9 +13,14 @@ export class LoadRepository implements ILoadRepository {
     async getLoadsPaginated(page: number, pageSize: number, loadNumber: string, loadType: string, weight: number, loadAddress: string, unloadAddress: string): Promise<Load[]> {
 
         let conditions: any = {};
-
-
-        const queryParameters: any = { loadAddress: { $regex: loadAddress, $options: 'i' }, loadNumber: { $regex: loadNumber, $options: 'i' }, loadType, unloadAddress: { $regex: unloadAddress, $options: 'i' }, weight };
+        const queryParameters: any = {
+            loadAddress:
+                { $regex: loadAddress, $options: 'i' },
+            loadNumber: { $regex: loadNumber, $options: 'i' },
+            loadType: { $regex: loadType, $options: 'i' },
+            unloadAddress: { $regex: unloadAddress, $options: 'i' },
+            weight: { $regex: weight, $options: 'i' }
+        };
         for (const key in queryParameters) {
             if (queryParameters[key]) {
                 conditions[key] = queryParameters[key];
