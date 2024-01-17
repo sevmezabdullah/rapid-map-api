@@ -19,7 +19,7 @@ export class LoadRepository implements ILoadRepository {
             loadNumber: { $regex: loadNumber, $options: 'i' },
             loadType: { $regex: loadType, $options: 'i' },
             unloadAddress: { $regex: unloadAddress, $options: 'i' },
-            weight: { $regex: weight, $options: 'i' }
+            weight: { $regex: weight }
         };
         for (const key in queryParameters) {
             if (queryParameters[key]) {
