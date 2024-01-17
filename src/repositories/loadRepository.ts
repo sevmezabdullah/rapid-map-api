@@ -38,7 +38,7 @@ export class LoadRepository implements ILoadRepository {
         });
 
         if (result) {
-            return result;
+            return result.filter(doc => doc.customerId !== null);
         } else {
             return []
         }
