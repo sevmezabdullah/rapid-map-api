@@ -35,6 +35,7 @@ export class LoadController {
             const loadAddress = req.query.loadAddress as string;
             const unloadAddress = req.query.unloadAddress as string;
 
+            console.log(unloadAddress)
             const result = await this.interactor.getLoadsPaginated(page, pageSize, loadNumber, loadType, weight, loadAddress, unloadAddress);
             return res.status(200).json({ message: result });
         } catch (error) {

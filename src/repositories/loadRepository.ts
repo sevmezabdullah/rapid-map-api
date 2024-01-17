@@ -14,13 +14,16 @@ export class LoadRepository implements ILoadRepository {
 
         let conditions: any = {};
 
-        const queryParameters: any = { loadAddress, loadNumber, loadType, unloadAddress, weight };
+        console.log(unloadAddress)
+        const queryParameters: any = { loadAddress: { $regex: loadAddress, $options: 'i' }, loadNumber, loadType, unloadAddress: { $regex: unloadAddress, $options: 'i' }, weight };
         for (const key in queryParameters) {
             if (queryParameters[key]) {
                 conditions[key] = queryParameters[key];
             }
         }
         const result = await LoadModel.find(conditions).skip((page - 1) * pageSize).limit(pageSize).sort({ createdAt: -1 }).populate('customerId');
+        console.log(conditions)
+        console.log(result)
         if (result) {
             return result;
         } else {

@@ -1458,3 +1458,12 @@
 {"level":"info","message":"GET /api/user/getByRole/customer/1/20 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T13:04:33.084Z"}
 {"level":"info","message":"POST /api/load/createLoad ::1 {\"customerId\":\"65a51c2da2f3423c2b5689b6\",\"loadNumber\":\"12347\",\"loadAddress\":\"Cihangir\",\"unloadAddress\":\"Beşiktaş\",\"loadType\":\"Tekstil\",\"weight\":120} PostmanRuntime/7.36.1","timestamp":"2024-01-17T13:32:14.687Z"}
 {"level":"info","message":"POST /api/load/createLoad ::1 {\"customerId\":\"65a51c2da2f3423c2b5689b6\",\"loadNumber\":\"127\",\"loadAddress\":\"Cihangir\",\"unloadAddress\":\"Beşiktaş\",\"loadType\":\"Tekstil\",\"weight\":120} PostmanRuntime/7.36.1","timestamp":"2024-01-17T13:32:28.778Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10?loadNumber=&weight=140&loadAddress=&unloadAddress=istanbul ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T14:07:44.677Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10?loadNumber=&weight=140&loadAddress=&unloadAddress=istanbul ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T14:07:55.159Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10?loadNumber=&weight=140&loadAddress=&unloadAddress=istanbul ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T14:08:29.286Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10?loadNumber=&weight=140&loadAddress=&unloadAddress=istanbul ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T14:08:59.536Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10?loadNumber=&loadAddress=&unloadAddress=istanbul ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T14:09:05.981Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10?loadNumber=&weight=&loadAddress=&unloadAddress=istanbul ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T14:09:15.508Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10?loadNumber=&weight=&loadAddress=&unloadAddress=istanbul ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T14:09:45.722Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10?loadNumber=&weight=&loadAddress=&unloadAddress=istanbul ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T14:09:57.571Z"}
+{"level":"info","message":"GET /api/load/getAllLoads/1/10?loadNumber=&weight=&loadAddress=mos&unloadAddress= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-17T14:17:07.996Z"}
