@@ -14,8 +14,8 @@ export class LoadRepository implements ILoadRepository {
 
         let conditions: any = {};
 
-        console.log(unloadAddress)
-        const queryParameters: any = { loadAddress: { $regex: loadAddress, $options: 'i' }, loadNumber, loadType, unloadAddress: { $regex: unloadAddress, $options: 'i' }, weight };
+
+        const queryParameters: any = { loadAddress: { $regex: loadAddress, $options: 'i' }, loadNumber: { $regex: loadNumber, $options: 'i' }, loadType, unloadAddress: { $regex: unloadAddress, $options: 'i' }, weight };
         for (const key in queryParameters) {
             if (queryParameters[key]) {
                 conditions[key] = queryParameters[key];
