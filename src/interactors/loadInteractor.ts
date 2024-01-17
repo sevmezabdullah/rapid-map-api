@@ -14,9 +14,10 @@ export class LoadInteractor implements ILoadInteractor {
         const count = await this.repository.getLoadsCount();
         return count;
     }
-    async getLoadsPaginated(page: number, pageSize: number, loadNumber: string, loadType: string, weight: string, loadAddress: string, unloadAddress: string): Promise<Load[]> {
+    async getLoadsPaginated(page: number, pageSize: number, loadNumber: string, loadType: string, weight: string, loadAddress: string, unloadAddress: string, name: string): Promise<Load[]> {
+
         const result = await this.repository.getLoadsPaginated(page, pageSize
-            , loadNumber, loadType, weight, loadAddress, unloadAddress);
+            , loadNumber, loadType, weight, loadAddress, unloadAddress, name);
         if (result) {
             return result;
         } else {
