@@ -15,6 +15,7 @@ export class LoadController {
             const body = req.body;
             const loadAddress = (body.loadAddress as string).toLowerCase();
             const unloadAddress = (body.unloadAddress as string).toLowerCase();
+            console.log(loadAddress, unloadAddress)
             const result = await this.interactor.createLoad({ loadNumber: body.loadNumber, customerId: body.customerId, loadType: body.loadType, weight: body.weight, loadAddress: loadAddress, unloadAddress: unloadAddress });
             return res.status(200).json({ message: result });
         } catch (error) {
