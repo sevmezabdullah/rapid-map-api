@@ -30,7 +30,6 @@ export class LoadController {
             const loadType = req.query.loadType as string;
             const weight = parseInt(req.query.weight as string);
             const loadAddress = req.query.loadAddress as string;
-
             const unloadAddress = req.query.unloadAddress as string;
 
             const result = await this.interactor.getLoadsPaginated(page, pageSize, loadNumber, loadType, weight, loadAddress, unloadAddress);

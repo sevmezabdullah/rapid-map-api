@@ -76,7 +76,10 @@ export class UserController {
             const role = req.params.role;
             const page = req.params.page ? parseInt(req.params.page.toString()) : 1;
             const pageSize = req.params.pageSize ? parseInt(req.params.pageSize.toString()) : 10;
-            const users = await this.interactor.getByRolePaginated(role, page, pageSize);
+            const name = req.query.name as string;
+            const email = req.query.email as string;
+            const phone = req.query.phone as string;
+            const users = await this.interactor.getByRolePaginated(role, page, pageSize, name, email, phone);
             res.status(200).json({ users });
         } catch (error: any) {
             res.status(500).json({ message: error });
@@ -126,6 +129,7 @@ export class UserController {
     }
     async onGetUserByRole(req: Request, res: Response, next: NextFunction) {
         try {
+
             const role = req.params.role;
             const users = await this.interactor.getUserByRole(role);
             res.status(200).json({ users });

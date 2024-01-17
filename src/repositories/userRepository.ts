@@ -21,8 +21,18 @@ export class UserRepository implements IUserRepository {
         return count;
     }
 
-    async getByRolePaginated(role: string, page: number, pageSize: number): Promise<User[]> {
-        const users = await UserModel.find({ role: role }).skip((page - 1) * pageSize).limit(pageSize).select("-password");
+    async getByRolePaginated(role: string, page: number, pageSize: number, name: string, email: string, phone: string): Promise<User[]> {
+
+
+        let conditions: any = {}
+        const queryParameters: any = { name, email, phone, role };
+        for (const key in queryParameters) {
+            if (queryParameters[key]) {
+                conditions[key] = queryParameters[key];
+            }
+        }
+
+        const users = await UserModel.find(conditions).skip((page - 1) * pageSize).limit(pageSize).select("-password");
         if (users) return users;
         else return [];
     }

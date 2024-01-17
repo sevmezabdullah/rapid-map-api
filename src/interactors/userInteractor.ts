@@ -37,8 +37,8 @@ export class UserInteractor implements IUserInteractor {
         const count = this.repository.getUserCountByRole(role);
         return count;
     }
-    getByRolePaginated(role: string, page: number, pageSize: number): Promise<User[]> {
-        const users = this.repository.getByRolePaginated(role, page, pageSize);
+    getByRolePaginated(role: string, page: number, pageSize: number, name: string, email: string, phone: string): Promise<User[]> {
+        const users = this.repository.getByRolePaginated(role, page, pageSize, name, email, phone);
         return users;
     }
 
