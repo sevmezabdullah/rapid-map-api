@@ -9,7 +9,7 @@ export class TruckRepository implements ITruckRepository {
         const count = await TruckModel.countDocuments();
         return count;
     }
-    async getTrucksPaged(page: number, pageSize: number, plate: string, type: string, status: string, driverName: string): Promise<Truck[]> {
+    async getTrucksPaged(page: number, pageSize: number, plate: string, type: string, status: string, driverName: string, loadNumber: string): Promise<Truck[]> {
         console.log("Repository : ", plate)
 
 
@@ -20,6 +20,7 @@ export class TruckRepository implements ITruckRepository {
             type:
                 { $regex: type, $options: 'i' },
             status: { $regex: status, $options: 'i' },
+            loadNumber: { $regex: loadNumber, $options: 'i' }
         };
 
 
@@ -28,7 +29,7 @@ export class TruckRepository implements ITruckRepository {
                 conditions[key] = queryParameters[key];
             }
         }
-        console.log(conditions)
+
         const trucks = await TruckModel.find(conditions).skip(page * pageSize).limit(pageSize).select("-__v").populate(
             {
                 path: "driverId", match: { name: { $regex: driverName, $options: 'i' } },

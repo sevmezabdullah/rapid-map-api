@@ -100,8 +100,9 @@ export class TruckController {
             const type = req.query.type as string;
             const status = req.query.status as string;
             const driverName = req.query.driverName as string;
+            const loadNumber = req.query.loadNumber as string;
 
-            const result = await this.interactor.getTrucksPaged(Number(page), Number(pageSize), plate, type, status, driverName);
+            const result = await this.interactor.getTrucksPaged(Number(page), Number(pageSize), plate, type, status, driverName, loadNumber);
             return res.status(200).json({ message: result });
         } catch (error: any) {
             return res.status(500).json({ message: error });

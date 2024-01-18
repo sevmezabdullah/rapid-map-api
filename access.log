@@ -139,3 +139,9 @@
 {"level":"info","message":"PUT /api/truck/updateDriver ::1 {\"truckId\":\"65a91028d163782d20ffa182\",\"newDriverId\":\"65a910db8bbdd61c8880c34a\"} PostmanRuntime/7.36.1","timestamp":"2024-01-18T11:52:11.950Z"}
 {"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=test&plate ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T11:52:50.851Z"}
 {"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T11:53:00.095Z"}
+{"level":"info","message":"PUT /api/truck/updateLoadNumber ::1 {\"truckId\":\"65a90e27ef069860e6535768\",\"newLoadNumber\":\"1235\"} PostmanRuntime/7.36.1","timestamp":"2024-01-18T12:04:28.937Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T12:04:38.190Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber=1235 ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T12:04:47.721Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T12:04:53.597Z"}
+{"level":"info","message":"PUT /api/truck/updateLoadNumber ::1 {\"truckId\":\"65a91028d163782d20ffa182\",\"newLoadNumber\":\"12354\"} PostmanRuntime/7.36.1","timestamp":"2024-01-18T12:05:40.204Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T12:05:44.655Z"}
