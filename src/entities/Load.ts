@@ -7,6 +7,7 @@ export class Load {
         public readonly customerId?: string,
         public readonly loadAddress?: string,
         public readonly unloadAddress?: string,
+        public readonly deliveryDate?: Date,
 
 
     ) {

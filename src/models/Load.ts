@@ -31,6 +31,10 @@ const loadSchema = new Schema<Load>({
         type: String,
         required: true
     },
+    deliveryDate: {
+        type: Date,
+        required: true
+    }
 
 }, { timestamps: true });
 
