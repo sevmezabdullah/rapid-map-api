@@ -15,8 +15,9 @@ export class TruckInteractor implements ITruckInteractor {
         const result = await this.repository.getTrucksCount();
         return result;
     }
-    async getTrucksPaged(page: number, pageSize: number): Promise<Truck[]> {
-        const result = await this.repository.getTrucksPaged(page, pageSize);
+    async getTrucksPaged(page: number, pageSize: number, plate: string, type: string, status: string, driverName: string): Promise<Truck[]> {
+        console.log(plate)
+        const result = await this.repository.getTrucksPaged(page, pageSize, plate, type, status, driverName);
         return result;
     }
     async updateTruckLocationByDriverId(driverId: string, langitude: number, longitude: number): Promise<string> {

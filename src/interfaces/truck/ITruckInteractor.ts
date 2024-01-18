@@ -17,7 +17,7 @@ export interface ITruckInteractor {
     getTrucksByLoadNumber(loadNumber: string): Promise<Truck>;
     getTrucksByLocation(): Promise<Truck>;
     getTrucksByDriverId(driverId: string): Promise<Truck>;
-    getTrucksPaged(page: number, pageSize: number): Promise<Truck[]>;
+    getTrucksPaged(page: number, pageSize: number, plate: string, type: string, status: string, driverName: string): Promise<Truck[]>;
     getTrucksCount(): Promise<number>;
 
 }

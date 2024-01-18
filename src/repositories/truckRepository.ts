@@ -9,8 +9,32 @@ export class TruckRepository implements ITruckRepository {
         const count = await TruckModel.countDocuments();
         return count;
     }
-    async getTrucksPaged(page: number, pageSize: number): Promise<Truck[]> {
-        const trucks = await TruckModel.find().skip(page * pageSize).limit(pageSize).select("-__v").populate({ path: "driverId", select: "-__v -password" });
+    async getTrucksPaged(page: number, pageSize: number, plate: string, type: string, status: string, driverName: string): Promise<Truck[]> {
+        console.log("Repository : ", plate)
+
+
+
+        let conditions: any = {};
+        const queryParameters: any = {
+            plate: { $regex: plate, $options: 'i' },
+            type:
+                { $regex: type, $options: 'i' },
+            status: { $regex: status, $options: 'i' },
+        };
+
+
+        for (const key in queryParameters) {
+            if (queryParameters[key]) {
+                conditions[key] = queryParameters[key];
+            }
+        }
+        console.log(conditions)
+        const trucks = await TruckModel.find(conditions).skip(page * pageSize).limit(pageSize).select("-__v").populate(
+            {
+                path: "driverId", match: { name: { $regex: driverName, $options: 'i' } },
+                select: "-__v -password"
+            }
+        );
         if (trucks) return trucks;
         else throw new Error("Trucks not found");
 
