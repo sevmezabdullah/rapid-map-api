@@ -20,9 +20,10 @@ export class TruckRepository implements ITruckRepository {
             type:
                 { $regex: type, $options: 'i' },
             status: { $regex: status, $options: 'i' },
-            loadNumber: { $regex: loadNumber, $options: 'i' }
+
         };
 
+        if (loadNumber) queryParameters.loadNumber = loadNumber;
 
         for (const key in queryParameters) {
             if (queryParameters[key]) {
@@ -30,9 +31,10 @@ export class TruckRepository implements ITruckRepository {
             }
         }
 
+
         const trucks = await TruckModel.find(conditions).skip(page * pageSize).limit(pageSize).select("-__v").populate(
             {
-                path: "driverId", match: { name: { $regex: driverName, $options: 'i' } },
+                path: "driverId", match: driverName ? { name: { $regex: driverName, $options: 'i' } } : {},
                 select: "-__v -password"
             }
         );

@@ -145,3 +145,15 @@
 {"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T12:04:53.597Z"}
 {"level":"info","message":"PUT /api/truck/updateLoadNumber ::1 {\"truckId\":\"65a91028d163782d20ffa182\",\"newLoadNumber\":\"12354\"} PostmanRuntime/7.36.1","timestamp":"2024-01-18T12:05:40.204Z"}
 {"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T12:05:44.655Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:08:36.921Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:09:20.114Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:13:05.562Z"}
+{"level":"info","message":"POST /api/truck/create ::1 {\"plate\":\"34 AC 455\",\"type\":\"Kamyonet\"} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:16:13.626Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:16:31.647Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:17:23.349Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:17:42.290Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:17:45.312Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:19:22.919Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:20:03.390Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&plate ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:20:06.510Z"}
+{"level":"info","message":"GET /api/truck/getTrucksPaged/0/10?status=&type=&driverName=&plate&loadNumber= ::1 {} PostmanRuntime/7.36.1","timestamp":"2024-01-18T16:20:09.833Z"}

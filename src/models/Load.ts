@@ -21,7 +21,9 @@ const loadSchema = new Schema<Load>({
     loadNumber: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        sparse: true,
+        index: true
     },
     loadType: {
         type: String,
