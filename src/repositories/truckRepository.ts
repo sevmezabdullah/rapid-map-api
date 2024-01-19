@@ -23,7 +23,7 @@ export class TruckRepository implements ITruckRepository {
 
         };
 
-        if (loadNumber) queryParameters.loadNumber = loadNumber;
+        if (loadNumber) queryParameters.loadNumber = { $regex: loadNumber, $options: 'i' };
 
         for (const key in queryParameters) {
             if (queryParameters[key]) {
