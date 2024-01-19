@@ -37,7 +37,7 @@ export class TruckRepository implements ITruckRepository {
                 path: "driverId", match: driverName ? { name: { $regex: driverName, $options: 'i' } } : {},
                 select: "-__v -password"
             }
-        );
+        ).sort({ createdAt: -1 });
         if (trucks) return trucks;
         else throw new Error("Trucks not found");
 
