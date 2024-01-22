@@ -13,4 +13,5 @@ export interface IUserRepository {
     getUserCountByRole(role: string): Promise<number>
     getUsersByNameOrEmailTransporter(name: string, email: string): Promise<User[]>
     getUserByRole(role: string): Promise<User[]>
+
 }
