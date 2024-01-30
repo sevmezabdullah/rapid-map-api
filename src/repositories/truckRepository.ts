@@ -2,9 +2,28 @@ import { Truck } from "../entities/Truck";
 import TruckModel from "../models/Truck";
 import { ITruckRepository } from "../interfaces/truck/ITruckRepository";
 import { injectable } from "inversify";
+import mongoose from "mongoose";
 
 @injectable()
 export class TruckRepository implements ITruckRepository {
+    async updateTruck(truckId: string, truck: Truck): Promise<string> {
+
+        const driverId = new mongoose.Types.ObjectId(truck.driverId);
+
+        console.log("Truck ID : Repository ", truckId)
+        console.log(driverId)
+
+
+
+        const result = await TruckModel.findOneAndUpdate({ _id: truckId }, {
+            $set: {
+                driverId: driverId, plate: truck.plate, type: truck.type, loadNumber: truck.loadNumber, category: truck.category
+                // etc 
+            }
+        }, { new: true });
+        if (result) return "Truck updated";
+        else throw new Error("Truck not updated");
+    }
     async getTrucksCount(): Promise<number> {
         const count = await TruckModel.countDocuments();
         return count;
@@ -60,9 +79,7 @@ export class TruckRepository implements ITruckRepository {
         else
             throw new Error("Truck not created");
     }
-    updateTruck(truckId: string): Promise<string> {
-        throw new Error("Method not implemented.");
-    }
+
 
     async updateTruckStatus(truckId: string, newStatus: string): Promise<string> {
         const updateResult = await TruckModel.updateOne({ _id: truckId }, { status: newStatus });

@@ -117,6 +117,23 @@ export class TruckController {
             return res.status(500).json({ message: error });
         }
     }
+
+    async onUpdateTruck(req: Request, res: Response) {
+        try {
+
+            const truck = req.body;
+            const truckId = req.body._id;
+            console.log(truckId)
+            console.log(req.body)
+
+            const result = await this.interactor.updateTruck(truckId, truck);
+            return res.status(200).json({ message: result });
+        } catch (error) {
+
+            return res.status(500).json({ message: error });
+
+        }
+    }
     async onGetTruckByDriverId(req: Request, res: Response, next: NextFunction) {
         try {
             const driverId = req.params.driverId;

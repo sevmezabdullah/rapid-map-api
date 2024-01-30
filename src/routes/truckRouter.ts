@@ -34,6 +34,7 @@ truckRouter.put('/updateDriver', controller.onUpdateTruckDriver.bind(controller)
 truckRouter.put('/updateLocation', controller.onUpdateTruckLocation.bind(controller));
 truckRouter.put('/updateStatus', controller.onUpdateTruckStatus.bind(controller));
 truckRouter.put('/updateLoadNumber', controller.onUpdateTruckLoadNumber.bind(controller));
+truckRouter.put('/update', controller.onUpdateTruck.bind(controller));
 
 
 export default truckRouter;

@@ -31,8 +31,11 @@ export class TruckInteractor implements ITruckInteractor {
         const result = await this.repository.createTruck(truck);
         return result;
     }
-    updateTruck(truckId: string, truck: Truck): Promise<string> {
-        throw new Error("Method not implemented.");
+    async updateTruck(truckId: string, truck: Truck): Promise<string> {
+        console.log("Truck ID : Interactor ", truckId)
+        const result = await this.repository.updateTruck(truckId, truck);
+        return result
+
     }
     updateTruckLocation(truckId: string, longitude: number, langitute: number): Promise<string> {
         throw new Error("Method not implemented.");
