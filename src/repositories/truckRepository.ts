@@ -120,6 +120,7 @@ export class TruckRepository implements ITruckRepository {
 
 
     }
+
     getTrucksByStatus(status: string): Promise<Truck[]> {
         throw new Error("Method not implemented.");
     }
